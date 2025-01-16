@@ -23,7 +23,7 @@ return {
     },
     keys = {
       { "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", desc = "Buscar archivos" },
-      { "<leader>fg", "<cmd>lua require('fzf-lua').grep()<CR>", desc = "Buscar texto" },
+      { "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>", desc = "Buscar texto" },
       { "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", desc = "Buscar buffers abiertos" },
       { "<leader>fh", "<cmd>lua require('fzf-lua').help_tags()<CR>", desc = "Buscar ayuda" },
     },

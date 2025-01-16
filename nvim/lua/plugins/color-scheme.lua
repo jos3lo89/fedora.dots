@@ -4,7 +4,7 @@ return {
     name = "kanagawa",
     priority = 1000,
     opts = {
-      transparent = false,
+      transparent = true,
       theme = "dragon", -- Establece la variante del tema como 'dragon' (otras opciones podrían ser 'wave' o 'lotus')
       overrides = function(colors)
         local theme = colors.theme
@@ -27,9 +27,28 @@ return {
     },
   },
   {
+    -- Plugin for the Everforest color scheme
+    "neanias/everforest-nvim",
+    version = false, -- Use the latest version
+    lazy = false, -- Load this plugin immediately
+    config = function()
+      require("everforest").setup({
+        background = "hard", -- Set the background to 'hard'
+        italis = true, -- Enable italics
+        transparent_background_level = 1, -- Uncomment to enable transparency
+        diagnostic_text_highlight = true, -- Enable diagnostic text highlight
+        diagnostic_virtual_text = "coloured", -- Set diagnostic virtual text to colored
+        colours_override = function(palette)
+          palette.bg0 = "#1A1A22" -- Override background color
+        end,
+      })
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-dragon",
+      -- colorscheme = "kanagawa-dragon",
+      colorscheme = "everforest",
     },
   },
 }
